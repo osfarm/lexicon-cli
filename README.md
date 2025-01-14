@@ -28,8 +28,17 @@ VERSION could be '6.0.0-ekyviti' for example
 
 ## in lexicon-cli root folder
 
+`docker compose exec lexicon_cli bin/lexicon remote download <VERSION>`
+
 `bin/lexicon remote download VERSION`
 
 `bin/lexicon production load VERSION --no-verify`
 
 `bin/lexicon production enable VERSION`
+
+
+
+$DIR/lexicon-cli/bin/lexicon remote download $VERSION >> /tmp/trace
+$DIR/lexicon-cli/bin/lexicon production load $VERSION --no-validate >> /tmp/trace
+
+
