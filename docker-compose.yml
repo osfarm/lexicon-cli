@@ -6,7 +6,7 @@ services:
       context: .
     volumes:
       - ./bin:/lexicon-cli/bin:ro
-      - ./lib:/lexicon/data:ro
+      - ./lib:/lexicon-cli/lib:ro
       - ./out:/lexicon-cli/out
     env_file:
       - .env
