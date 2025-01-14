@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'lexicon-cli'
+
+require 'dotenv/load'
+
+application = Lexicon::Cli::Application.new(ARGV, extensions: [
+  Lexicon::Cli::Extension::CommonExtension.new(data_root: Pathname.new(__dir__).join('..')),
+  Lexicon::Cli::Extension::RemoteExtension.new,
+  Lexicon::Cli::Extension::ProductionExtension.new,
+])
+
+application.start
