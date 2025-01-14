@@ -22,7 +22,7 @@ WORKDIR /lexicon-cli
 ENV BUNDLE_PATH=/lexicon-cli/vendor/bundle \
     BUNDLER_VERSION='2.2.33'
 RUN gem install bundler -v $BUNDLER_VERSION
-COPY Gemfile /lexicon-cli/
+COPY Gemfile lexicon-cli.gemspec /lexicon-cli/
 RUN bundle install --jobs $(nproc) --path vendor/bundle
 
 ADD . /lexicon-cli/
