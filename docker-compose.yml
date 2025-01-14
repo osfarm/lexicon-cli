@@ -1,6 +1,6 @@
 services:
   lexicon-cli:
-    restart: always
+    restart: unless-stopped
     image: lexicon-cli:latest
     build:
       context: .
@@ -10,3 +10,4 @@ services:
       - ./out:/lexicon-cli/out
     env_file:
       - .env
+    command: sleep infinity
