@@ -1,10 +1,7 @@
 # frozen_string_literal: true
-
-require_relative 'lib/lexicon/cli/version'
-
 Gem::Specification.new do |spec|
   spec.name = 'lexicon-cli'
-  spec.version = Lexicon::Cli::VERSION
+  spec.version = '0.2.0'
   spec.authors = ['Ekylibre developers']
   spec.email = ['dev@ekylibre.com']
 
