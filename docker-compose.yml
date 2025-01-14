@@ -1,0 +1,17 @@
+services:
+  lexicon_cli:
+    restart: always
+    image: lexicon-cli:latest
+    build:
+      context: .
+    volumes:
+      - ./bin:/lexicon-cli/bin:ro
+      - ./lib:/lexicon/data:ro
+      - ./out:/lexicon-cli/out
+    env_file:
+      - .env
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /lexicon-cli
