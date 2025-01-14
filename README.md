@@ -10,7 +10,7 @@ install ruby > 2.6.6
 
 `sudo apt install ruby`
 
-clone repo on your server
+clone repo on your server or on your local machine
 
 ## in lexicon-cli/.env
 ```
@@ -26,19 +26,22 @@ Then you can follow the 3 steps :
 
 VERSION could be '6.0.0-ekyviti' for example
 
-## in lexicon-cli root folder
-
-`docker compose exec lexicon_cli bin/lexicon remote download <VERSION>`
+## LOCAL MODE from lexicon-cli root folder
 
 `bin/lexicon remote download VERSION`
 
-`bin/lexicon production load VERSION --no-verify`
+`bin/lexicon production load VERSION --no-validate`
 
 `bin/lexicon production enable VERSION`
 
+## DOCKER MODE from host
 
+`docker compose up -d`
 
-$DIR/lexicon-cli/bin/lexicon remote download $VERSION >> /tmp/trace
-$DIR/lexicon-cli/bin/lexicon production load $VERSION --no-validate >> /tmp/trace
+`docker compose exec lexicon_cli bin/lexicon remote download <VERSION>`
+
+`docker compose exec lexicon_cli bin/lexicon production load <VERSION> --no-validate`
+
+`docker compose exec lexicon_cli bin/lexicon production enable <VERSION>`
 
 
